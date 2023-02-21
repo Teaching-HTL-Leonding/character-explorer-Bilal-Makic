@@ -1,0 +1,44 @@
+table {
+  margin: 25px;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: middle;
+}
+
+th {
+  border: 1px solid black;
+  padding: 4px;
+}
+
+thead th {
+  width: 10%;
+}
+
+thead {
+  background-color: #333;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+td:hover {
+  background-color: #ddd;
+}
+
+.characterDetails{
+  border: 1px solid black;
+}
+
+.searchField{
+  padding: 10px;
+  margin-right: 10px;
+  margin-left: 25px;
+}
+
+.searchButton{
+  padding: 10px;
+}
+
+

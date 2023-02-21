@@ -1,0 +1,59 @@
+<form>
+  <h1>Character Details</h1>
+  <table>
+    <thead>
+    <th>Name</th>
+    <th>TV Shows</th>
+    <th>Video Games</th>
+    <th>Allies</th>
+    <th>Enemies</th>
+    <th>Status</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="characterDetails">{{characterToView.name}}</td>
+      <td class="characterDetails">{{characterToView.tvShows}}</td>
+      <td class="characterDetails">{{characterToView.videoGames}}</td>
+      <td class="characterDetails">{{characterToView.allies}}</td>
+      <td class="characterDetails">{{characterToView.enemies}}</td>
+      <td class="characterDetails"><button (click)="addOrRemoveFavorites(characterToView)">Change Favorite Status</button></td>
+      <td class="characterDetails">{{isFavoriteCharacter(characterToView)}}</td>
+    </tr>
+  </tbody>
+  </table>
+  <div>
+  <img [src]="characterToView.imageUrl">
+</div>
+<div>
+  <h1>Favorite Characters</h1>
+  <table>
+    <thead>
+      <th>Name</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let favoriteCharacter of getFavoriteCharacters()">
+        <td>{{favoriteCharacter.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  <input class="searchField" placeholder="Search" type="text" id="search" name="search" [(ngModel)]="filterKeyWord">
+  <button class="searchButton" (click)="searchForCharacter()">Search</button>
+  <table>
+    <thead>
+    <th>
+      Name
+    </th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let character of getCharacterList()">
+      <a (click)="setCharacterToView(character)">
+        <td>
+        {{character.name}}
+      </td>
+    </a>
+    </tr>
+  </tbody>
+  </table>
+
+</form>
